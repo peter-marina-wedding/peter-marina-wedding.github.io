@@ -140,11 +140,12 @@ h2.title { font-weight: 500; font-size: 26px; letter-spacing: .14em; text-transf
   padding: 18px 14% 26px; scrollbar-width: none; margin-inline: calc(50% - 50vw); -webkit-overflow-scrolling: touch;
 }
 .track::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 72%; max-width: 330px; scroll-snap-align: center; aspect-ratio: 3 / 4; border-radius: 4px; overflow: hidden; transform: scale(.88); opacity: .6; transition: transform .45s ease, opacity .45s ease; box-shadow: 0 22px 34px -22px rgba(125, 67, 78, .7); border: 6px solid var(--paper); background: var(--paper); }
+.slide { flex: 0 0 72%; max-width: 330px; scroll-snap-align: center; position: relative; background: #ecd6d0; border-radius: 4px; overflow: hidden; transform: scale(.88); opacity: .6; transition: transform .45s ease, opacity .45s ease; box-shadow: 0 22px 34px -22px rgba(125, 67, 78, .7); border: 6px solid var(--paper); background: var(--paper); }
 .slide.on { transform: scale(1); opacity: 1; }
-.slide.wide { aspect-ratio: 4 / 3; }
-.slide.sq { aspect-ratio: 11 / 10; }
-.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide::before { content: ""; display: block; padding-top: 133.33%; }
+.slide.wide::before { padding-top: 75%; }
+.slide.sq::before { padding-top: 90.91%; }
+.slide img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .dots { display: flex; gap: 8px; margin-top: -6px; }
 .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--blush-deep); transition: all .3s; }
 .dots i.on { width: 24px; border-radius: 4px; background: var(--rose); }
@@ -284,12 +285,12 @@ h2.title { font-weight: 500; font-size: 26px; letter-spacing: .14em; text-transf
     <p class="eyebrow">Photo gallery</p>
     <h2 class="script rg" style="font-size:46px;margin:0">Our moments</h2>
     <div class="track" id="track">
-      <div class="slide on"><img src="img/g1.jpg" alt="Peter and Marina in front of a flower arch" loading="lazy"></div>
-      <div class="slide"><img src="img/g2.jpg" alt="Peter and Marina in a mirror selfie at the reception" loading="lazy"></div>
-      <div class="slide sq"><img src="img/g3.jpg" alt="Peter and Marina exchanging rings in the church" loading="lazy" style="object-position:40% 50%"></div>
-      <div class="slide"><img src="img/g4.jpg" alt="Peter and Marina showing their rings, black and white" loading="lazy"></div>
-      <div class="slide wide"><img src="img/g5.jpg" alt="Peter and Marina showing their rings in the car" loading="lazy" style="object-position:55% 50%"></div>
-      <div class="slide"><img src="img/g6.jpg" alt="Peter and Marina showing their rings" loading="lazy"></div>
+      <div class="slide on"><img src="img/g1.jpg" alt="Peter and Marina in front of a flower arch"></div>
+      <div class="slide"><img src="img/g2.jpg" alt="Peter and Marina in a mirror selfie at the reception"></div>
+      <div class="slide sq"><img src="img/g3.jpg" alt="Peter and Marina exchanging rings in the church" style="object-position:40% 50%"></div>
+      <div class="slide"><img src="img/g4.jpg" alt="Peter and Marina showing their rings, black and white"></div>
+      <div class="slide wide"><img src="img/g5.jpg" alt="Peter and Marina showing their rings in the car" style="object-position:55% 50%"></div>
+      <div class="slide"><img src="img/g6.jpg" alt="Peter and Marina showing their rings"></div>
     </div>
     <div class="dots" id="dots" aria-hidden="true"></div>
   </section>

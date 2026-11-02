@@ -99,11 +99,12 @@ h1, h2, h3, p { margin: 0; }
 
 /* ---------- cover ---------- */
 .cover { background: var(--sky-pale); padding-top: 56px; overflow: hidden; }
-.cover .top { font-size: 16px; color: var(--ink-soft); }
+.cover .top { font-size: 16px; color: var(--ink-soft); text-align: center; }
+.cover .when, .cover .count { text-align: center; }
 .cover h1 { font-size: clamp(84px, 27vw, 120px); margin: 14px 0 0; }
+.cover h1 { text-align: center; }
 .cover h1 span { display: block; }
-.cover h1 .b { text-align: right; padding-right: 2%; }
-.cover h1 .amp { display: inline; font-size: .5em; color: var(--sky-deep); margin-right: .1em; }
+.cover h1 .amp { display: block; font-size: .45em; color: var(--sky-deep); margin: 4px 0; }
 .arch { position: relative; width: 82%; margin: 34px auto 0; }
 .arch .pic { position: relative; overflow: hidden; border-radius: 999px 999px 18px 18px; background: var(--sky); }
 .arch .pic::before { content: ""; display: block; padding-top: 128%; }
@@ -121,16 +122,15 @@ h1, h2, h3, p { margin: 0; }
 .count span { font-size: 12.5px; color: var(--ink-soft); }
 
 /* ---------- families ---------- */
-.families { background: var(--navy); color: var(--cream); }
+.families { background: var(--navy); color: var(--cream); text-align: center; }
 .families .lead { font-size: 16px; color: var(--sky); }
 .families .parents { margin-top: 26px; display: flex; flex-direction: column; gap: 6px; }
 .families .parents b { display: block; font: italic 300 clamp(40px, 12.5vw, 54px)/1.02 var(--display); letter-spacing: -.01em; }
 .families .parents span { display: block; font-size: 14px; color: var(--sky); margin: 4px 0 22px; }
-.families .parents div:last-child b { padding-left: 14%; }
-.families .parents div:last-child span { padding-left: 14%; margin-bottom: 0; }
-.families .msg { margin-top: 38px; padding-top: 30px; border-top: 1px solid rgba(201, 218, 236, .35); color: #D8E2EE; max-width: 27em; text-wrap: balance; }
-.families .couple { margin-top: 30px; font: 400 22px/1.3 var(--display); }
-.families .couple .amp { color: var(--butter); font-style: italic; }
+.families .parents div:last-child span { margin-bottom: 0; }
+.families .msg { margin: 0 auto; margin-top: 38px; padding-top: 30px; border-top: 1px solid rgba(201, 218, 236, .35); color: #D8E2EE; max-width: 27em; text-wrap: balance; }
+.families .couple { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 2px; font: italic 300 clamp(36px, 11vw, 46px)/1.05 var(--display); }
+.families .couple .amp { color: var(--butter); font-size: .6em; }
 
 /* ---------- gallery ---------- */
 .gallery { background: var(--cream); padding-left: 0; padding-right: 0; overflow: hidden; }
@@ -227,7 +227,7 @@ h1, h2, h3, p { margin: 0; }
   <section class="band cover" aria-label="Wedding of Peter and Marina">
     <div class="in">
       <p class="top">We're getting married</p>
-      <h1 class="display"><span class="a">Peter</span><span class="b"><i class="amp" aria-hidden="true">&amp;</i>Marina</span></h1>
+      <h1 class="display"><span class="a">Peter</span><i class="amp" aria-hidden="true">&amp;</i><span class="b">Marina</span></h1>
       <div class="arch">
         <div class="pic"><img src="img/cover.jpg" alt="Peter and Marina hugging in front of a curtain" width="1000" height="1333"></div>
         <div class="badge" aria-hidden="true">
@@ -254,7 +254,7 @@ h1, h2, h3, p { margin: 0; }
         <div><b>Eng. Mina Wissam</b><span>Family of the groom</span></div>
       </div>
       <p class="msg">Two families, one joyful day. With grateful hearts, we invite you to celebrate the beginning of our life together.</p>
-      <p class="couple">Peter Wissam <span class="amp">&amp;</span> Marina Domadios</p>
+      <p class="couple"><span>Peter Wissam</span><span class="amp">&amp;</span><span>Marina Domadios</span></p>
     </div>
   </section>
 
